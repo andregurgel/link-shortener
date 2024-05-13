@@ -22,7 +22,7 @@ public class ShortenerResource {
         response.sendRedirect(urlToRedirect);
     }
 
-    @PostMapping
+    @PostMapping("/shorten-url")
     public ResponseEntity<ShortenerResponseRecord> insert(@RequestBody ShortenerRequestRecord shortenerRequestRecord) {
         return ResponseEntity.ok(shortenerService.insert(shortenerRequestRecord.urlToShort()));
     }
