@@ -1,6 +1,7 @@
 package br.dev.andregurgel.linkshortener.api.shortener;
 
 import br.dev.andregurgel.linkshortener.api.config.GlobalProperties;
+import br.dev.andregurgel.linkshortener.api.config.exceptions.InvalidOrNotFoundShortenerCodeException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -71,7 +72,7 @@ public class ShortenerService {
 
             return shortener.getUrl();
         } catch (EntityNotFoundException e) {
-            throw new RuntimeException("O link está invalido ou expirado", e.getCause());
+            throw new InvalidOrNotFoundShortenerCodeException();
         }
     }
 
