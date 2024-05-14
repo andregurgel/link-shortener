@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "a4b1c5b1-69e0-4f60-85ac-66af0e445b46",
+		"name": "Link Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11581103"
+	},
+	"item": [
+		{
+			"name": "Shortener",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://www.twitter.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shorten-url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shorten-url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redirect",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BqLj0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BqLj0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
