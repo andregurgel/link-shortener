@@ -2,6 +2,7 @@
 [JAVA_BADGE]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [POSTGRES_BADGE]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 [MAVEN_BADGE]: https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white
+[POSTMAN_BADGE]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white
 
 # Link Shortener 💻
 
@@ -9,6 +10,7 @@
 ![Java][JAVA_BADGE]
 ![Postgres][POSTGRES_BADGE]
 ![Apache Maven][MAVEN_BADGE]
+![Postman][POSTMAN_BADGE]
 
 An API developed to test knowledge and for that I created an API that is responsible for shortening links.
 
@@ -40,6 +42,7 @@ create database link-shortener
 
 3. In 'application.properties' configure the database access credentials and choose the port on which your application will run.
 4. In the GlobalProperties class, change the value of the url property to what you will use, default: "http://localhost:8080".
+5. Download the project requests collection in postman by clicking [here](https://github.com/andregurgel/link-shortener/blob/main/link-shortener-postman.json). (Optional)
 5. Okay, it looks like we're done there.
 
 ## 📍 API Endpoints
