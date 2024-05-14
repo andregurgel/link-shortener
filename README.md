@@ -46,8 +46,8 @@ create database link-shortener
 
 | route                              | description                                          
 |------------------------------------|-----------------------------------------------------
-| <kbd>POST /shorten-url</kbd>       | authenticate user into the api see [request details](#post-shorten-url)
-| <kbd>GET /{shortenedUrlCode}</kbd> | retrieves user info see [response details](#get-shortened-url)
+| <kbd>POST /shorten-url</kbd>       | send the URL you want to shorten and receive the shortened URL. [request details](#post-shorten-url)
+| <kbd>GET /{shortenedUrlCode}</kbd> | redirect to original URL [response details](#get-shortened-url)
 
 <h3 id="post-shorten-url">POST /shorten-url</h3>
 
