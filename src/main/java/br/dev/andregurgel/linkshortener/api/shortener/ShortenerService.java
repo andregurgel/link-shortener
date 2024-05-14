@@ -1,6 +1,6 @@
 package br.dev.andregurgel.linkshortener.api.shortener;
 
-import br.dev.andregurgel.linkshortener.api.config.GlobalProperties;
+import br.dev.andregurgel.linkshortener.api.config.properties.GlobalProperties;
 import br.dev.andregurgel.linkshortener.api.config.exceptions.InvalidOrNotFoundShortenerCodeException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.log4j.Log4j2;
@@ -17,8 +17,11 @@ public class ShortenerService {
 
     private final ShortenerRepository shortenerRepository;
 
-    public ShortenerService(ShortenerRepository shortenerRepository) {
+    private final GlobalProperties globalProperties;
+
+    public ShortenerService(ShortenerRepository shortenerRepository, GlobalProperties globalProperties) {
         this.shortenerRepository = shortenerRepository;
+        this.globalProperties = globalProperties;
     }
 
     @Scheduled(cron = "0 59 23 * * ?")
@@ -56,7 +59,7 @@ public class ShortenerService {
         shortener.setUpdatedAt(LocalDateTime.now());
 
         var savedShortener = shortenerRepository.save(shortener);
-        return new ShortenerResponseRecord(GlobalProperties.backendUrl + "/" + savedShortener.getShortenedCode());
+        return new ShortenerResponseRecord(globalProperties.getSystemRoutes().getUrl() + "/" + savedShortener.getShortenedCode());
     }
 
     public void delete(Long id) {
