@@ -42,8 +42,6 @@ create database link-shortener
 4. In the GlobalProperties class, change the value of the url property to what you will use, default: "http://localhost:8080".
 5. Okay, it looks like we're done there.
 
-WRITE SOMETHING LATER
-
 ## 📍 API Endpoints
 
 | route                              | description                                          
